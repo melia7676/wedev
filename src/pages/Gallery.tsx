@@ -12,9 +12,16 @@ import d from "../assets/d.jpeg";
 import e from "../assets/e.jpeg";
 import f from "../assets/f.jpeg";
 import g from "../assets/g.jpeg";
+import h from "../assets/h.jpeg";
+import i from "../assets/jj.jpeg";
 import lov from "../assets/lov.jpeg";
-import me from "../assets/me.jpeg";
 import df from "../assets/df.jpeg";
+import aa from "../assets/aa.jpeg";
+import bb from "../assets/bb.jpeg";
+import cc from "../assets/cc.jpeg";
+import dd from "../assets/dd.jpeg";
+import ee from "../assets/ee.jpeg";
+import zz from "../assets/zz.jpeg";
 
 /* ============================================================
    🎨 CUSTOMIZE HERE: Replace placeholder URLs with real ones
@@ -23,106 +30,94 @@ import df from "../assets/df.jpeg";
 const profiles = [
   {
     id: 1,
-    name: "Mistress Amelia",
+    name: "Mistress Nora(Amelia)",
     title: "Professional Dominatrix",
-    image: d,
+    image: b,
     bio: "Experienced dominatrix specializing in psychological domination and discipline.",
     specialties: ["Discipline", "Role Play", "Sensory Play"],
     social: {
-      instagram: "https://instagram.com/mistressamelia",
-      facebook: "https://facebook.com/mistressamelia",
-      twitter: "https://twitter.com/mistressamelia",
+      instagram: "https://www.instagram.com/mistressnoramarinelli?igsh=MWF4ajlibzI1N3lxeQ==",
+      facebook: "https://www.facebook.com/share/1HieQiHwXc/?mibextid=wwXIfr",
+      twitter: "https://x.com/noramistress?s=21",
     },
   },
   {
     id: 2,
-    name: "Master Alexander",
+    name: "Daddy Magneto",
     title: "Rope Artist & Educator",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+    image: a,
     bio: "20 years of experience in traditional dominance and rope artistry.",
     specialties: ["Rope Bondage", "Traditional Dom", "Training"],
     social: {
-      instagram: "https://instagram.com/masteralexander",
-      facebook: "https://facebook.com/masteralexander",
-      twitter: "https://twitter.com/masteralexander",
+      instagram: "https://www.instagram.com/jablackx?igsh=MTFkdHZ2cWNyMW0wcg==",
+      twitter: "https://x.com/jeepmagneto?s=21",
     },
   },
   {
     id: 3,
-    name: "Mistress Rejoice",
+    name: "Goddess Sylvanas",
     title: "Sensory Explorer",
-    image: a,
+    image: d,
     bio: "Expert in sensory exploration and power exchange dynamics.",
     specialties: ["Sensory Deprivation", "Power Exchange", "Fetish"],
     social: {
-      instagram: "https://instagram.com/mistressrejoice",
-      facebook: "https://facebook.com/mistressrejoice",
-      twitter: "https://twitter.com/mistressrejoice",
+      instagram: "https://www.instagram.com/goddess.sylvanas?igsh=MXU4c3lvd3lrbTdvZg==",
+      twitter: "https://x.com/goddesssylvanas?s=21",
     },
   },
   {
     id: 4,
-    name: "Master Dominic",
+    name: "Master Wayne",
     title: "Impact Specialist",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
+    image: c,
     bio: "Specialized in impact play and advanced BDSM techniques.",
     specialties: ["Impact Play", "Advanced Techniques", "Mentorship"],
     social: {
-      instagram: "https://instagram.com/masterdominic",
-      facebook: "https://facebook.com/masterdominic",
-      twitter: "https://twitter.com/masterdominic",
+      twitter: "https://x.com/gwayneoff?s=21",
     },
   },
   {
     id: 5,
-    name: "Mistress Ladymelia Luca",
+    name: "Mistress Terra",
     title: "Sensual Domme",
-    image: me,
+    image: f,
     bio: "Expert in sensual domination and tease techniques.",
     specialties: ["Pegging", "Tease", "Seduction"],
     social: {
-      instagram: "https://instagram.com/ladymelialuca",
-      facebook: "https://facebook.com/ladymelialuca",
-      twitter: "https://twitter.com/ladymelialuca",
+      twitter: "https://x.com/mistress_terra_?s=21",
     },
   },
   {
     id: 6,
-    name: "Master Sterling",
+    name: "Lady Fatale",
     title: "Consent Educator",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
+    image: g,
     bio: "Expert in safe exploration and consent-focused practices.",
     specialties: ["Safety Education", "Consent", "Beginners"],
     social: {
-      instagram: "https://instagram.com/mastersterling",
-      facebook: "https://facebook.com/mastersterling",
-      twitter: "https://twitter.com/mastersterling",
+      twitter: "https://x.com/mrsladyfatale?s=21",
     },
   },
   {
     id: 7,
-    name: "Mistress Raven",
+    name: "Alexandra Wildfire",
     title: "Edge Play Expert",
-    image: c,
+    image: h,
     bio: "Specializes in intense sessions and edge play.",
     specialties: ["Edge Play", "Intensity", "Experience"],
     social: {
-      instagram: "https://instagram.com/mistressraven",
-      facebook: "https://facebook.com/mistressraven",
-      twitter: "https://twitter.com/mistressraven",
+      twitter: "https://x.com/ms_wildfire_?s=21",
     },
   },
   {
     id: 8,
-    name: "Master Viktor",
-    title: "Protocol Master",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
+    name: "Goddess Kara",
+    title: "Protocol Mistress",
+    image: j,
     bio: "Traditional master with focus on discipline and structure.",
     specialties: ["Discipline", "Structure", "Protocol"],
     social: {
-      instagram: "https://instagram.com/masterviktor",
-      facebook: "https://facebook.com/masterviktor",
-      twitter: "https://twitter.com/masterviktor",
+      twitter: "https://x.com/the_goddesskara?s=21",
     },
   },
   {
@@ -133,48 +128,41 @@ const profiles = [
     bio: "Expert in elegance, poise, and sophisticated domination.",
     specialties: ["Elegant Dom", "Sophistication", "Refinement"],
     social: {
-      instagram: "https://instagram.com/mistressdebbie",
-      facebook: "https://facebook.com/mistressdebbie",
-      twitter: "https://twitter.com/mistressdebbie",
     },
   },
   {
     id: 10,
-    name: "Master Julian",
+    name: "Mistress Moria",
     title: "Relationship Dynamics",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
+    image: jj,
     bio: "Specializes in trust building and relationship dynamics.",
     specialties: ["Trust Building", "Relationships", "Dynamics"],
     social: {
-      instagram: "https://instagram.com/masterjulian",
-      facebook: "https://facebook.com/masterjulian",
-      twitter: "https://twitter.com/masterjulian",
+      twitter: "https://x.com/xmistressmoria?s=21",
     },
   },
   {
     id: 11,
-    name: "Mistress Tempest",
+    name: "David Christian",
     title: "Creative Scene Artist",
-    image: f,
+    image: zz,
     bio: "Known for creative scenes and artistic expression.",
     specialties: ["Creative Scenes", "Artistry", "Innovation"],
     social: {
-      instagram: "https://instagram.com/mistresstempest",
-      facebook: "https://facebook.com/mistresstempest",
-      twitter: "https://twitter.com/mistresstempest",
+      instagram: "https://www.instagram.com/domfeeet?igsh=MTR5c21paG12dDFiOQ==",
+      facebook: "https://www.facebook.com/share/1HZNvRJ56x/?mibextid=wwXIfr",
+      twitter: "https://x.com/dombeeef?s=21",
     },
   },
   {
     id: 12,
-    name: "Master Phoenix",
+    name: "Stacie Summers",
     title: "Transformation Guide",
-    image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=500&fit=crop",
+    image: cc,
     bio: "Expert in transformation and personal growth through BDSM.",
     specialties: ["Transformation", "Growth", "Development"],
-    social: {
-      instagram: "https://instagram.com/masterphoenix",
-      facebook: "https://facebook.com/masterphoenix",
-      twitter: "https://twitter.com/masterphoenix",
+    social: {     
+      twitter: "https://x.com/stacie__summers?s=21",
     },
   },
   {
@@ -185,61 +173,53 @@ const profiles = [
     bio: "Focuses on psychological domination and lifestyle dynamics.",
     specialties: ["Lifestyle Dom", "Psychology", "Protocols"],
     social: {
-      instagram: "https://instagram.com/mistressdebbief",
-      facebook: "https://facebook.com/mistressdebbief",
-      twitter: "https://twitter.com/mistressdebbief",
     },
   },
   {
     id: 14,
-    name: "Master Damon",
+    name: "Goddess Silk",
     title: "Psychological Play",
-    image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=500&fit=crop",
+    image: bb,
     bio: "Specializes in intense psychological play and mindfuck.",
     specialties: ["Mind Games", "Psychology", "Intensity"],
     social: {
-      instagram: "https://instagram.com/masterdamon",
-      facebook: "https://facebook.com/masterdamon",
-      twitter: "https://twitter.com/masterdamon",
+      twitter: "https://x.com/daphsilksoles?s=21",
     },
   },
   {
     id: 15,
-    name: "Mistress Seraphina",
+    name: "Daph",
     title: "Sensual Tease",
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=500&fit=crop",
+    image: aa,
     bio: "Expert in sensual domination and tease techniques.",
     specialties: ["Sensual Dom", "Tease", "Seduction"],
     social: {
-      instagram: "https://instagram.com/mistressseraphina",
-      facebook: "https://facebook.com/mistressseraphina",
-      twitter: "https://twitter.com/mistressseraphina",
+      instagram: "https://www.instagram.com/waifudaphh?igsh=MTh2Ymlvenl2ZG90OA==",
+      twitter: "https://x.com/daph_vt?s=21",
     },
   },
   {
     id: 16,
-    name: "Mistress Aurora",
+    name: "Lady Navlia",
     title: "Nurturing Domme",
-    image: g,
+    image: dd,
     bio: "Focuses on nurturing dominance and positive reinforcement.",
-    specialties: ["Nurturing Dom", "Positive", "Support"],
+    specialties: ["Nurturing Domme", "Positive", "Support"],
     social: {
-      instagram: "https://instagram.com/mistressaurora",
-      facebook: "https://facebook.com/mistressaurora",
-      twitter: "https://twitter.com/mistressaurora",
+     twitter: "https://x.com/ladynavlia0?s=21",
     },
   },
   {
     id: 17,
-    name: "Mistress Isabella",
+    name: "Mistress Damazonia",
     title: "Lifestyle Educator",
-    image: b,
+    image: ee,
     bio: "Focuses on psychological domination and lifestyle dynamics.",
     specialties: ["Lifestyle Dom", "Psychology", "Protocols"],
     social: {
-      instagram: "https://instagram.com/mistressisabella",
-      facebook: "https://facebook.com/mistressisabella",
-      twitter: "https://twitter.com/mistressisabella",
+      instagram: "https://instagram.com/the.only.damazonia",
+      facebook: "https://www.facebook.com/sharer.php?u=https://tr.ee/o-0VimsUHY",
+      twitter: "https://x.com/damazonia_?s=21",
     },
   },
 ];
