@@ -2,79 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================================
+   WICKED GROUNDS ONLINE — Design System
+   Colors extracted directly from logo:
+   • Primary Red:    #d01030  →  hsl(350 86% 44%)
+   • Cream Text:     #f0f0e0  →  hsl(60 35% 91%)
+   • Dark BG:        #1a0a0a  →  hsl(0 44% 7%)
+   • Lighter Red:    #e02040  →  hsl(350 76% 50%)
+   ============================================================ */
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
+    /* Core backgrounds — warm dark black with red undertone */
+    --background: 0 44% 7%;
+    --foreground: 60 35% 91%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
+    /* Cards & popovers */
+    --card: 0 40% 9%;
+    --card-foreground: 60 35% 91%;
+    --popover: 0 40% 9%;
+    --popover-foreground: 60 35% 91%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
+    /* Primary: exact logo red #d01030 */
+    --primary: 350 86% 44%;
+    --primary-foreground: 60 35% 91%;
 
-    --primary: 330 81% 60%;
-    --primary-foreground: 0 0% 100%;
+    /* Secondary: muted deep wine */
+    --secondary: 350 40% 18%;
+    --secondary-foreground: 60 35% 91%;
 
-    --secondary: 330 40% 25%;
-    --secondary-foreground: 0 0% 98%;
+    --muted: 0 20% 14%;
+    --muted-foreground: 0 10% 55%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 340 75% 55%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent: lighter red #e02040 */
+    --accent: 350 76% 50%;
+    --accent-foreground: 60 35% 91%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 60 35% 91%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 330 81% 60%;
+    --border: 0 25% 16%;
+    --input: 0 25% 16%;
+    --ring: 350 86% 44%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 330 81% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 330 81% 60%;
+    /* Sidebar tokens */
+    --sidebar-background: 0 40% 6%;
+    --sidebar-foreground: 60 35% 91%;
+    --sidebar-primary: 350 86% 44%;
+    --sidebar-primary-foreground: 60 35% 91%;
+    --sidebar-accent: 0 20% 12%;
+    --sidebar-accent-foreground: 60 35% 91%;
+    --sidebar-border: 0 25% 14%;
+    --sidebar-ring: 350 86% 44%;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(330 81% 60%), hsl(340 75% 55%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 7%), hsl(0 0% 10%));
-    --shadow-elegant: 0 10px 40px -10px hsl(330 81% 60% / 0.3);
-    --shadow-glow: 0 0 60px hsl(330 81% 60% / 0.2);
+    /* ==========================================================
+       Wicked Grounds Custom Tokens
+       ========================================================== */
+    --gradient-primary: linear-gradient(135deg, hsl(350 86% 44%), hsl(350 76% 50%));
+    --gradient-crimson: linear-gradient(135deg, hsl(350 86% 44%), hsl(340 80% 35%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 44% 7%), hsl(0 40% 9%));
+    --gradient-hero:
+      radial-gradient(ellipse at 50% 0%, hsl(350 86% 30% / 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, hsl(350 60% 25% / 0.15) 0%, transparent 50%),
+      linear-gradient(180deg, hsl(0 44% 7%), hsl(0 40% 9%));
+
+    --shadow-elegant: 0 10px 40px -10px hsl(350 86% 44% / 0.35);
+    --shadow-glow: 0 0 60px hsl(350 86% 44% / 0.25);
+    --shadow-crimson: 0 0 40px hsl(350 76% 50% / 0.25);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 330 81% 60%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 330 40% 25%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 340 75% 55%;
-    --accent-foreground: 0 0% 100%;
+    --background: 0 44% 7%;
+    --foreground: 60 35% 91%;
+    --card: 0 40% 9%;
+    --card-foreground: 60 35% 91%;
+    --popover: 0 40% 9%;
+    --popover-foreground: 60 35% 91%;
+    --primary: 350 86% 44%;
+    --primary-foreground: 60 35% 91%;
+    --secondary: 350 40% 18%;
+    --secondary-foreground: 60 35% 91%;
+    --muted: 0 20% 14%;
+    --muted-foreground: 0 10% 55%;
+    --accent: 350 76% 50%;
+    --accent-foreground: 60 35% 91%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 330 81% 60%;
+    --destructive-foreground: 60 35% 91%;
+    --border: 0 25% 16%;
+    --input: 0 25% 16%;
+    --ring: 350 86% 44%;
   }
 }
 
@@ -107,6 +126,14 @@ All colors MUST be HSL.
     background: var(--gradient-primary);
   }
 
+  .gradient-crimson {
+    background: var(--gradient-crimson);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
   }
@@ -115,7 +142,72 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-glow);
   }
 
+  .shadow-crimson {
+    box-shadow: var(--shadow-crimson);
+  }
+
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+
+  /* Animated background — matches logo red tones */
+  .wg-animated-bg {
+    background:
+      radial-gradient(ellipse at 20% 20%, hsl(350 86% 30% / 0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, hsl(350 60% 25% / 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsl(0 30% 12% / 0.5) 0%, transparent 70%),
+      linear-gradient(180deg, hsl(0 44% 7%), hsl(0 40% 9%));
+    background-size: 200% 200%;
+    animation: wg-bg-shift 15s ease-in-out infinite;
+  }
+
+  @keyframes wg-bg-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Newsletter button — logo red with cream text */
+  .wg-newsletter-btn {
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-primary);
+    color: hsl(60 35% 91%);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    transition: var(--transition-smooth);
+  }
+
+  .wg-newsletter-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(350 86% 50%), hsl(350 76% 55%));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .wg-newsletter-btn:hover::before {
+    opacity: 1;
+  }
+
+  .wg-newsletter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px -6px hsl(350 86% 44% / 0.5);
+  }
+
+  .wg-newsletter-btn span {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Social icon hover ring — matches logo red */
+  .wg-social-icon {
+    @apply flex items-center justify-center w-10 h-10 rounded-full bg-muted/50 border border-border/50 text-muted-foreground transition-smooth;
+  }
+
+  .wg-social-icon:hover {
+    @apply text-primary border-primary/40 bg-primary/10;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px -4px hsl(350 86% 44% / 0.4);
   }
 }
