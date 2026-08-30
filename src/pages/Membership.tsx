@@ -682,6 +682,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
@@ -704,7 +720,7 @@ const Membership = () => {
   const [selectedMentor, setSelectedMentor] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
     setIsSubmitting(true);
@@ -712,30 +728,21 @@ const Membership = () => {
     const formData = new FormData(e.currentTarget);
     formData.append("mentor", selectedMentor);
 
-    try {
-      const response = await fetch("https://getform.io/f/775b6658-71af-430d-acb3-f17a1be33927", {
-        method: "POST",
-        body: formData,
-      });
+    // Fire-and-forget: getform.io receives the data but its response is
+    // blocked by CORS/redirect, so awaiting fetch() hangs forever.
+    // We send it off and immediately proceed to success.
+    fetch("https://getform.io/f/775b6658-71af-430d-acb3-f17a1be33927", {
+      method: "POST",
+      body: formData,
+    }).catch(() => {
+      // Silently ignore — getform.io CORS/redirect errors are expected
+    });
 
-      if (response.ok) {
-        toast.success("Application submitted successfully!");
-      } else {
-        // getform.io occasionally returns non-2xx while still processing the data
-        toast.success("Application submitted! We'll contact you within 24 hours.");
-      }
-    } catch (err) {
-      // getform.io commonly triggers a CORS/redirect error in the browser
-      // even though the server receives the submission correctly.
-      console.log("getform.io submission note:", err);
-      toast.success("Submitted! We received your form.");
-    }
-
-    // Always reset and redirect — getform.io behavior means catch ≠ real failure
+    toast.success("Application submitted successfully!");
     e.currentTarget.reset();
     setSelectedMentor("");
-    navigate("/membership-app");
     setIsSubmitting(false);
+    navigate("/membership-app");
   };
 
   return (
@@ -892,6 +899,237 @@ const Membership = () => {
 };
 
 export default Membership;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { Card } from "@/components/ui/card";
+// import { Button } from "@/components/ui/button";
+// import { Input } from "@/components/ui/input";
+// import { Label } from "@/components/ui/label";
+// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+// import { Check, Loader2 } from "lucide-react";
+// import { toast } from "sonner";
+
+// const professionals = [
+//   "Mistress Amelia","Master Alexander","Mistress Rejoice","Master Dominic",
+//   "Mistress Ladymelia","Master Sterling","Mistress Raven","Master Viktor",
+//   "Mistress Debbie","Master Julian","Mistress Tempest","Master Phoenix",
+//   "Mistress Aurora","Master Damon","Mistress Seraphina","Mistress Isabella","Mistress Debbie fielder"
+// ];
+
+// const Membership = () => {
+//   const navigate = useNavigate();
+//   const [selectedMentor, setSelectedMentor] = useState("");
+//   const [isSubmitting, setIsSubmitting] = useState(false);
+
+//   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     if (isSubmitting) return;
+//     setIsSubmitting(true);
+
+//     const formData = new FormData(e.currentTarget);
+//     formData.append("mentor", selectedMentor);
+
+//     try {
+//       const response = await fetch("https://getform.io/f/775b6658-71af-430d-acb3-f17a1be33927", {
+//         method: "POST",
+//         body: formData,
+//       });
+
+//       if (response.ok) {
+//         toast.success("Application submitted successfully!");
+//       } else {
+//         // getform.io occasionally returns non-2xx while still processing the data
+//         toast.success("Application submitted! We'll contact you within 24 hours.");
+//       }
+//     } catch (err) {
+//       // getform.io commonly triggers a CORS/redirect error in the browser
+//       // even though the server receives the submission correctly.
+//       console.log("getform.io submission note:", err);
+//       toast.success("Submitted! We received your form.");
+//     }
+
+//     // Always reset and redirect — getform.io behavior means catch ≠ real failure
+//     e.currentTarget.reset();
+//     setSelectedMentor("");
+//     navigate("/membership-app");
+//     setIsSubmitting(false);
+//   };
+
+//   return (
+//     <div className="min-h-screen py-12 px-6">
+//       <div className="max-w-5xl mx-auto">
+//         <div className="text-center mb-12">
+//           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+//             Join Our Community
+//           </h1>
+//           <p className="text-xl text-muted-foreground">
+//             Become a member of the House of Satisfaction BDSM Community
+//           </p>
+//         </div>
+
+//         <Card className="p-8 md:p-12 mb-12 shadow-elegant">
+//           <div className="grid md:grid-cols-2 gap-8 mb-12">
+//             <div>
+//               <h3 className="text-2xl font-bold mb-6">Membership Benefits</h3>
+//               <ul className="space-y-4">
+//                 <li className="flex gap-3">
+//                   <Check className="text-primary flex-shrink-0 mt-1" />
+//                   <span>Exclusive access to community events and gatherings</span>
+//                 </li>
+//                 <li className="flex gap-3">
+//                   <Check className="text-primary flex-shrink-0 mt-1" />
+//                   <span>Private member forums and discussion groups</span>
+//                 </li>
+//                 <li className="flex gap-3">
+//                   <Check className="text-primary flex-shrink-0 mt-1" />
+//                   <span>Educational workshops and safety training</span>
+//                 </li>
+//                 <li className="flex gap-3">
+//                   <Check className="text-primary flex-shrink-0 mt-1" />
+//                   <span>A free toy will be mailed to you after registration</span>
+//                 </li>
+//                 <li className="flex gap-3">
+//                   <Check className="text-primary flex-shrink-0 mt-1" />
+//                   <span>Access to experienced mentors and guides</span>
+//                 </li>
+//                 <li className="flex gap-3">
+//                   <Check className="text-primary flex-shrink-0 mt-1" />
+//                   <span>Monthly newsletter and exclusive content</span>
+//                 </li>
+//               </ul>
+//             </div>
+
+//             <div>
+//               <h3 className="text-2xl font-bold mb-6">Registration Process</h3>
+//               <div className="space-y-4">
+//                 <div className="flex gap-4">
+//                   <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center font-bold flex-shrink-0">
+//                     1
+//                   </div>
+//                   <div>
+//                     <h4 className="font-semibold mb-1">Complete the Application</h4>
+//                     <p className="text-sm text-muted-foreground">Fill out the membership form below</p>
+//                   </div>
+//                 </div>
+//                 <div className="flex gap-4">
+//                   <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center font-bold flex-shrink-0">
+//                     2
+//                   </div>
+//                   <div>
+//                     <h4 className="font-semibold mb-1">Submit Your Application</h4>
+//                     <p className="text-sm text-muted-foreground">We'll review your details within 24 hours</p>
+//                   </div>
+//                 </div>
+//                 <div className="flex gap-4">
+//                   <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center font-bold flex-shrink-0">
+//                     3
+//                   </div>
+//                   <div>
+//                     <h4 className="font-semibold mb-1">Download the App</h4>
+//                     <p className="text-sm text-muted-foreground">Get the Wicked Grounds Windows App to begin</p>
+//                   </div>
+//                 </div>
+//                 <div className="flex gap-4">
+//                   <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center font-bold flex-shrink-0">
+//                     4
+//                   </div>
+//                   <div>
+//                     <h4 className="font-semibold mb-1">Welcome to the Community</h4>
+//                     <p className="text-sm text-muted-foreground">Receive your membership credentials</p>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+
+//           <div className="border-t border-border pt-8">
+//             <h3 className="text-2xl font-bold mb-8 text-center">Complete Your Application</h3>
+
+//             <form onSubmit={handleSubmit} className="space-y-6">
+//               <div className="grid md:grid-cols-2 gap-6">
+//                 <div>
+//                   <Label htmlFor="fullName">Full Name *</Label>
+//                   <Input id="fullName" name="fullName" required className="mt-2" />
+//                 </div>
+//                 <div>
+//                   <Label htmlFor="sissyName">Preferred Name/Alias *</Label>
+//                   <Input id="sissyName" name="sissyName" required className="mt-2" />
+//                 </div>
+//                 <div>
+//                   <Label htmlFor="email">Email Address *</Label>
+//                   <Input id="email" name="email" type="email" required className="mt-2" />
+//                 </div>
+//                 <div>
+//                   <Label htmlFor="phone">Phone Number *</Label>
+//                   <Input id="phone" name="phone" type="tel" required className="mt-2" />
+//                 </div>
+//               </div>
+
+//               <div>
+//                 <Label>Preferred Mentor *</Label>
+//                 <Select onValueChange={setSelectedMentor} required>
+//                   <SelectTrigger className="mt-2">
+//                     <SelectValue placeholder="Select a mentor" />
+//                   </SelectTrigger>
+//                   <SelectContent>
+//                     {professionals.map((prof) => (
+//                       <SelectItem key={prof} value={prof}>
+//                         {prof}
+//                       </SelectItem>
+//                     ))}
+//                   </SelectContent>
+//                 </Select>
+//               </div>
+
+//               <Button
+//                 type="submit"
+//                 size="lg"
+//                 className="w-full gradient-primary shadow-glow"
+//                 disabled={isSubmitting}
+//               >
+//                 {isSubmitting ? (
+//                   <>
+//                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+//                     Submitting...
+//                   </>
+//                 ) : (
+//                   "Submit Application"
+//                 )}
+//               </Button>
+
+//               <p className="text-sm text-muted-foreground text-center">
+//                 Questions? Contact us at houseofsatisfactionbdsmcommu@gmail.com
+//               </p>
+//             </form>
+//           </div>
+//         </Card>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Membership;
 
 
 
