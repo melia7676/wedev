@@ -7,9 +7,9 @@ import { ShoppingCart, X, Lock, ShieldCheck, AlertCircle } from "lucide-react";
 import chastity from "../assets/chastity.jpeg";
 import satin from "../assets/cca.jpeg";
 import flogger from "../assets/ca.jpeg";
-import paddle from "../assets/paddle.jpeg";
+import paddle from "../assets/ce.jpeg";
 import silk from "../assets/cb.jpeg";
-import leather from "../assets/leather.jpg";
+import leather from "../assets/cd.jpeg";
 import hemp from "../assets/cf.jpeg";
 import maid from "../assets/maid.avif";
 import { Link } from "react-router-dom";
@@ -44,9 +44,9 @@ const products: Product[] = [
   { id: 3, name: "Crossdresser’s Dress Up Box Kit", price: 3895, image: silk, category: "Dress Kit", description: "A stylish crossdresser’s dress up kit featuring feminine outfits, elegant high heels, scarves, wigs, panties, and delicate lingerie sets. Everything you need to express your feminine side and create your desired look with confidence and style" },
   { id: 4, name: "Complete Makeup Kit", price: 450, image: satin, category: "Accessories", description: "A complete makeup kit featuring lipstick, foundation, concealer, eyeshadow, eyeliner, mascara, blush, highlighter, false lashes, brushes, nail polish, and more. Everything you need to enhance your features and create beautiful feminine looks, from natural to glamorous" },
   { id: 5, name: "Male Slave Roleplay Kit", price: 1305, image: hemp, category: "Dress Kit", description: "A complete adult roleplay kit featuring submissive style underwear, fitted black outfits, knee-high socks, decorative collars, cuffs, gloves, and optional blindfolds. Perfect for consensual roleplay, with accessories to create an obedient servant, formal houseboy, or classic submissive look" },
-  { id: 6, name: "Leather Ankle Cuffs", price: 510, image: leather, category: "Restraints", description: "Durable leather ankle cuffs with D-rings" },
+  { id: 6, name: "Master’s Authority Kit", price: 7510, image: leather, category: "Dress Kit", description: "A premium Master roleplay kit featuring designer black outfits, polished boots, leather gloves, luxury collars and cuffs, a riding crop, blindfold, and elegant authority accessories, complete with designer fragrance, grooming essentials, and a luxury journal for agreed rules and boundaries, combining confidence, control, and sophistication in consensual adult roleplay" },
   { id: 7, name: "Maid Dress", price: 880, image: maid, category: "Harnesses", description: "Fashionable body harness" },
-  { id: 8, name: "Paddle Set", price: 485, image: paddle, category: "Impact Play", description: "Three-piece paddle set for all levels" },
+  { id: 8, name: "Mistress Power Kit", price: 6085, image: paddle, category: "Dress Kit", description: "A luxurious dominatrix kit featuring designer black outfits, high heels, thigh high boots, leather gloves, premium collars and cuffs, a stylish hand fan, elegant eye mask, and riding crop. Complete with bold makeup, designer fragrance, and a luxury journal for consensual roleplay, combining power, authority, and sophistication" },
 ];
 
 /* ============================================================
