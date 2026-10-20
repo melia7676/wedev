@@ -5,12 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { ShoppingCart, X, Lock, ShieldCheck, AlertCircle } from "lucide-react";
 import chastity from "../assets/chastity.jpeg";
-import satin from "../assets/satin.jpeg";
+import satin from "../assets/cca.jpeg";
 import flogger from "../assets/ca.jpeg";
 import paddle from "../assets/paddle.jpeg";
-import silk from "../assets/silk.jpeg";
+import silk from "../assets/cb.jpeg";
 import leather from "../assets/leather.jpg";
-import hemp from "../assets/hemp.jpg";
+import hemp from "../assets/cf.jpg";
 import maid from "../assets/maid.avif";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -41,9 +41,9 @@ interface Product {
 const products: Product[] = [
   { id: 1, name: "Chastity Cage", price: 520, image: chastity, category: "Accessories", description: "Lightweight silicone chastity cage for comfortable long-term wear" },
   { id: 2, name: "Elderly Roleplay Sub Kit", price: 4050, image: flogger, category: "Dress Kit", description: "A complete elderly inspired roleplay kit featuring dresses, lingerie, stockings, slippers, wigs, glasses, scarves, handbags, and classic accessories. Includes optional nightgowns and house robes to help you create your preferred character look" },
-  { id: 3, name: "Silk Restraints Set", price: 595, image: silk, category: "Restraints", description: "Soft silk restraints for comfortable bondage" },
-  { id: 4, name: "Satin Blindfold", price: 450, image: satin, category: "Accessories", description: "Luxurious satin blindfold for sensory play" },
-  { id: 5, name: "Hemp Rope Set", price: 475, image: hemp, category: "Bondage", description: "Professional-grade hemp rope for shibari" },
+  { id: 3, name: "Crossdresser’s Dress Up Box Kit", price: 3895, image: silk, category: "Dress Kit", description: "A stylish crossdresser’s dress up kit featuring feminine outfits, elegant high heels, scarves, wigs, panties, and delicate lingerie sets. Everything you need to express your feminine side and create your desired look with confidence and style" },
+  { id: 4, name: "Complete Makeup Kit", price: 450, image: satin, category: "Accessories", description: "A complete makeup kit featuring lipstick, foundation, concealer, eyeshadow, eyeliner, mascara, blush, highlighter, false lashes, brushes, nail polish, and more. Everything you need to enhance your features and create beautiful feminine looks, from natural to glamorous" },
+  { id: 5, name: "Male Slave Roleplay Kit", price: 1305, image: hemp, category: "Dress Kit", description: "A complete adult roleplay kit featuring submissive style underwear, fitted black outfits, knee-high socks, decorative collars, cuffs, gloves, and optional blindfolds. Perfect for consensual roleplay, with accessories to create an obedient servant, formal houseboy, or classic submissive look" },
   { id: 6, name: "Leather Ankle Cuffs", price: 510, image: leather, category: "Restraints", description: "Durable leather ankle cuffs with D-rings" },
   { id: 7, name: "Maid Dress", price: 880, image: maid, category: "Harnesses", description: "Fashionable body harness" },
   { id: 8, name: "Paddle Set", price: 485, image: paddle, category: "Impact Play", description: "Three-piece paddle set for all levels" },
