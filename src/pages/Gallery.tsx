@@ -29,7 +29,7 @@ import zz from "../assets/zz.jpeg";
 const profiles = [
   {
     id: 1,
-    name: "Mistress Nora (Amelia)",
+    name: "Mistress Nora(Amelia Mascia)",
     title: "Professional Dominatrix",
     image: b,
     bio: "Experienced dominatrix specializing in psychological domination and discipline.",
@@ -54,7 +54,7 @@ const profiles = [
   },
   {
     id: 3,
-    name: "Goddess Sylvanas",
+    name: "Goddess Sylvanas(Rejoice)",
     title: "Sensory Explorer",
     image: d,
     bio: "Expert in sensory exploration and power exchange dynamics.",
