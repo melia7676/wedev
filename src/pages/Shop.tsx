@@ -40,7 +40,7 @@ interface Product {
 
 const products: Product[] = [
   { id: 1, name: "Chastity Cage", price: 520, image: chastity, category: "Accessories", description: "Lightweight silicone chastity cage for comfortable long-term wear" },
-  { id: 2, name: "Elderly Roleplay Sub Kit", price: 4050, image: flogger, category: "Dress Kit", description: "A special dress-up kit for those who enjoy exploring an elderly-inspired roleplay look. Designed to help you transform your appearance and embrace the character with every detail.
+  { id: 2, name: "Elderly Roleplay Sub Kit", price: 4050, image: flogger, category: "Accessories", description: "A special dress-up kit for those who enjoy exploring an elderly-inspired roleplay look. Designed to help you transform your appearance and embrace the character with every detail.
 
 What’s Inside:
 
