@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Membership from "./pages/Membership";
+import Confirmation from "./pages/Confirmation";
 import MembershipApp from "./pages/MembershipApp";
 import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
@@ -33,6 +34,7 @@ const App = () => (
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/membership" element={<Membership />} />
+              <Route path="/confirmation" element={<Confirmation />} />
               <Route path="/membership-app" element={<MembershipApp />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="*" element={<NotFound />} />
