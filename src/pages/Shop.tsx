@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { ShoppingCart, X, Lock, ShieldCheck, AlertCircle } from "lucide-react";
-import chastity from "../assets/chastity.jpeg";
+import chastity from "../assets/cg.png";
 import satin from "../assets/cca.jpeg";
 import flogger from "../assets/ca.jpeg";
 import paddle from "../assets/ce.jpeg";
@@ -39,10 +39,11 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, name: "Chastity Cage", price: 520, image: chastity, category: "Accessories", description: "Lightweight silicone chastity cage for comfortable long-term wear" },
+  { id: 1, name: "Toys Kit", price: 720, image: chastity, category: "Accessories", description: "A premium adult toy collection featuring chastity cages in various sizes and styles, butt plugs, prostate massagers, anal beads, and other intimate accessories.
+Includes luxury materials, beginner friendly and advanced options, multiple sizes, cleaning essentials, and storage pouches for a personalized experience focused on comfort, hygiene, and safety" },
   { id: 2, name: "Elderly Roleplay Sub Kit", price: 4050, image: flogger, category: "Dress Kit", description: "A complete elderly inspired roleplay kit featuring dresses, lingerie, stockings, slippers, wigs, glasses, scarves, handbags, and classic accessories. Includes optional nightgowns and house robes to help you create your preferred character look" },
   { id: 3, name: "Crossdresser’s Dress Up Box Kit", price: 3895, image: silk, category: "Dress Kit", description: "A stylish crossdresser’s dress up kit featuring feminine outfits, elegant high heels, scarves, wigs, panties, and delicate lingerie sets. Everything you need to express your feminine side and create your desired look with confidence and style" },
-  { id: 4, name: "Complete Makeup Kit", price: 450, image: satin, category: "Accessories", description: "A complete makeup kit featuring lipstick, foundation, concealer, eyeshadow, eyeliner, mascara, blush, highlighter, false lashes, brushes, nail polish, and more. Everything you need to enhance your features and create beautiful feminine looks, from natural to glamorous" },
+  { id: 4, name: "Complete Makeup Kit", price: 980, image: satin, category: "Accessories", description: "A complete makeup kit featuring lipstick, foundation, concealer, eyeshadow, eyeliner, mascara, blush, highlighter, false lashes, brushes, nail polish, and more. Everything you need to enhance your features and create beautiful feminine looks, from natural to glamorous" },
   { id: 5, name: "Male Slave Roleplay Kit", price: 1305, image: hemp, category: "Dress Kit", description: "A complete adult roleplay kit featuring submissive style underwear, fitted black outfits, knee-high socks, decorative collars, cuffs, gloves, and optional blindfolds. Perfect for consensual roleplay, with accessories to create an obedient servant, formal houseboy, or classic submissive look" },
   { id: 6, name: "Master’s Authority Kit", price: 7510, image: leather, category: "Dress Kit", description: "A premium Master roleplay kit featuring designer black outfits, polished boots, leather gloves, luxury collars and cuffs, a riding crop, blindfold, and elegant authority accessories, complete with designer fragrance, grooming essentials, and a luxury journal for agreed rules and boundaries, combining confidence, control, and sophistication in consensual adult roleplay" },
   { id: 7, name: "Maid Dress", price: 880, image: maid, category: "Harnesses", description: "Fashionable body harness" },
