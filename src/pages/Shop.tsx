@@ -40,22 +40,7 @@ interface Product {
 
 const products: Product[] = [
   { id: 1, name: "Chastity Cage", price: 520, image: chastity, category: "Accessories", description: "Lightweight silicone chastity cage for comfortable long-term wear" },
-  { id: 2, name: "Elderly Roleplay Sub Kit", price: 4050, image: flogger, category: "Accessories", description: "A special dress-up kit for those who enjoy exploring an elderly-inspired roleplay look. Designed to help you transform your appearance and embrace the character with every detail.
-
-What’s Inside:
-
-* 👗 Elderly-style dresses and modest outfits
-* 🩲 Comfortable high-waisted panties
-* 🎀 Bras and lingerie
-* 🧦 Knee-high stockings
-* 👡 Comfortable slippers or low-heeled shoes
-* 🧣 Soft scarves and shawls
-* 💇 Grey or white wigs
-* 👓 Reading glasses
-* 👜 Handbags and other classic accessories
-* 🩱 Optional nightgowns and house robes
-
-A complete roleplay collection for creating a convincing elderly-inspired look, with clothing and accessories to suit your preferred character and style." },
+  { id: 2, name: "Elderly Roleplay Sub Kit", price: 4050, image: flogger, category: "Accessories", description: "A special dress-up kit for those who enjoy exploring an elderly-inspired roleplay look." },
   { id: 3, name: "Silk Restraints Set", price: 595, image: silk, category: "Restraints", description: "Soft silk restraints for comfortable bondage" },
   { id: 4, name: "Satin Blindfold", price: 450, image: satin, category: "Accessories", description: "Luxurious satin blindfold for sensory play" },
   { id: 5, name: "Hemp Rope Set", price: 475, image: hemp, category: "Bondage", description: "Professional-grade hemp rope for shibari" },
