@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/sheet";
 
 /* ============================================================
-   MEMBERS ONLY — Community ID Gate
+   MEMBERS ONLY : Community ID Gate
    ============================================================ */
 const COMMUNITY_ID = "sub26081pb";
 const STORAGE_KEY = "wgo_shop_verified";
