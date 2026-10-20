@@ -300,7 +300,7 @@ const Confirmation = () => {
                     type="button"
                     variant="outline"
                     size="sm"
-                    onClick={() => copyToClipboard("houseofsatisfactionbdsmcommu@gmail.com")}
+                    onClick={() => copyToClipboard("wickedground@protonmail.com")}
                   >
                     <Copy className="mr-2 h-4 w-4" /> Copy
                   </Button>
