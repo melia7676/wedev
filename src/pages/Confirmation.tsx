@@ -283,6 +283,33 @@ const Confirmation = () => {
                 emailed to you personally.
               </p>
 
+              {/* Receipt Instructions */}
+              <Card className="p-6 bg-muted">
+                <p className="text-sm font-semibold mb-2 text-center">
+                  Done paying? Send your receipt
+                </p>
+                <p className="text-sm text-muted-foreground text-center mb-3">
+                  Email a photo or screenshot of your payment receipt to us so we can
+                  confirm and issue your Community ID:
+                </p>
+                <div className="flex items-center justify-center gap-3">
+                  <p className="font-mono text-sm font-semibold text-primary break-all">
+                    houseofsatisfactionbdsmcommu@gmail.com
+                  </p>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => copyToClipboard("houseofsatisfactionbdsmcommu@gmail.com")}
+                  >
+                    <Copy className="mr-2 h-4 w-4" /> Copy
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground text-center mt-3">
+                  Include your full name and preferred alias in the email so we can match your payment quickly.
+                </p>
+              </Card>
+
               <p className="text-sm text-muted-foreground text-center">
                 Questions? Contact us at houseofsatisfactionbdsmcommu@gmail.com
               </p>
