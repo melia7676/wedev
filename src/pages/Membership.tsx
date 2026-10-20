@@ -709,7 +709,7 @@ import { Check, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 const professionals = [
-  "Mistress Amelia","Master Alexander","Mistress Rejoice","Master Dominic",
+  "Mistress Nora(Amelia Mascia)","Master Alexander","Mistress Sylvanas(Rejoice)","Master Dominic",
   "Mistress Ladymelia","Master Sterling","Mistress Raven","Master Viktor",
   "Mistress Debbie","Master Julian","Mistress Tempest","Master Phoenix",
   "Mistress Aurora","Master Damon","Mistress Seraphina","Mistress Isabella","Mistress Debbie fielder"
