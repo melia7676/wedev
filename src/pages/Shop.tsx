@@ -40,7 +40,7 @@ interface Product {
 
 const products: Product[] = [
   { id: 1, name: "Chastity Cage", price: 520, image: chastity, category: "Accessories", description: "Lightweight silicone chastity cage for comfortable long-term wear" },
-  { id: 2, name: "Elderly Roleplay Sub Kit", price: 4050, image: flogger, category: "Accessories", description: "A special dress-up kit for those who enjoy exploring an elderly-inspired roleplay look." },
+  { id: 2, name: "Elderly Roleplay Sub Kit", price: 4050, image: flogger, category: "Dress Kit", description: "A complete elderly inspired dress-up kit designed for roleplay and character transformation, featuring modest dresses, high waisted panties, bras and lingerie, knee high stockings, comfortable slippers, scarves, shawls, grey or white wigs, reading glasses, handbags, classic accessories, and optional nightgowns and house robes to help you create a convincing look that suits your preferred character and style." },
   { id: 3, name: "Silk Restraints Set", price: 595, image: silk, category: "Restraints", description: "Soft silk restraints for comfortable bondage" },
   { id: 4, name: "Satin Blindfold", price: 450, image: satin, category: "Accessories", description: "Luxurious satin blindfold for sensory play" },
   { id: 5, name: "Hemp Rope Set", price: 475, image: hemp, category: "Bondage", description: "Professional-grade hemp rope for shibari" },
