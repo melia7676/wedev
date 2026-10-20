@@ -10,7 +10,7 @@ import flogger from "../assets/ca.jpeg";
 import paddle from "../assets/paddle.jpeg";
 import silk from "../assets/cb.jpeg";
 import leather from "../assets/leather.jpg";
-import hemp from "../assets/cf.jpg";
+import hemp from "../assets/cf.jpeg";
 import maid from "../assets/maid.avif";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
